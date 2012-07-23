@@ -1,0 +1,10 @@
+Seraph
+=======
+
+WIN32 scanner of local SMB network written in C
+
+enumerates resources as a tree of local network
+
+compiled with Dev C++
+
+my hobby project from 2005
