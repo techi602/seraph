@@ -1,0 +1,33 @@
+# Project: Seraph
+# Makefile created by Dev-C++ 4.9.9.2-wx-beta-6.8
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = Seraph_private.res
+OBJ  = seraph.o $(RES)
+LINKOBJ  = seraph.o $(RES)
+LIBS =  -L"D:/Dev-Cpp/lib" D:/Dev-Cpp/lib/libwininet.a D:/Dev-Cpp/lib/libws2_32.a D:/Dev-Cpp/lib/libmpr.a  
+INCS =  -I"D:/Dev-Cpp/include" 
+CXXINCS =  -I"D:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"D:/Dev-Cpp/include/c++/3.4.2/backward"  -I"D:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"D:/Dev-Cpp/include/c++/3.4.2"  -I"D:/Dev-Cpp/include"  -I"D:/Dev-Cpp/include/wx/msw"  -I"D:/Dev-Cpp/include/wx/generic"  -I"D:/Dev-Cpp/include/wx/animate"  -I"D:/Dev-Cpp/include/wx/fl"  -I"D:/Dev-Cpp/include/wx/gizmos"  -I"D:/Dev-Cpp/include/wx/html"  -I"D:/Dev-Cpp/include/wx/mmedia"  -I"D:/Dev-Cpp/include/wx/net"  -I"D:/Dev-Cpp/include/wx/ogl"  -I"D:/Dev-Cpp/include/wx/plot"  -I"D:/Dev-Cpp/include/wx/protocol"  -I"D:/Dev-Cpp/include/wx/stc"  -I"D:/Dev-Cpp/include/wx/svg"  -I"D:/Dev-Cpp/include/wx/xml"  -I"D:/Dev-Cpp/include/wx/xrc"  -I"D:/Dev-Cpp/include/wx" 
+BIN  = Seraph.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS = $(INCS) 
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before Seraph.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o "Seraph.exe" $(LIBS)
+
+seraph.o: seraph.c D:/Dev-Cpp/include/windows.h   D:/Dev-Cpp/include/commctrl.h D:/Dev-Cpp/include/stdio.h   D:/Dev-Cpp/include/sys/types.h D:/Dev-Cpp/include/shlobj.h   D:/Dev-Cpp/include/wininet.h
+	$(CC) -c seraph.c -o seraph.o $(CFLAGS)
+
+Seraph_private.res: Seraph_private.rc 
+	$(WINDRES) -i Seraph_private.rc --input-format=rc -o Seraph_private.res -O coff 
